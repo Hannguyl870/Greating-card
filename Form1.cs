@@ -28,8 +28,8 @@ namespace Greating_card
         SolidBrush whitebrush = new SolidBrush(Color.White);
         SolidBrush turquoisebrush = new SolidBrush(Color.Turquoise);
         SolidBrush deepskybluebrush = new SolidBrush(Color.DeepSkyBlue);
-        SolidBrush orangebrush = new SolidBrush(Color.Orange);
-       
+        SolidBrush orangebrush = new SolidBrush(Color.Orange); 
+        int i = 0;
         public Form1()
         {
             InitializeComponent();
@@ -43,9 +43,17 @@ namespace Greating_card
 
             g.DrawLine(Whitepen, 40, 40, 100, 100);
             g.DrawLine(Whitepen, 40, 100, 100, 40);
-            g.DrawLine(Whitepen, 70, 40, 70, 100);
+            g.DrawLine(Whitepen, 70, 30, 70, 110);
+            g.DrawLine(Whitepen, 30, 70, 110, 70);
 
-           
+            g.DrawLine(Whitepen, 200, 200, 250, 250);
+            g.DrawLine(Whitepen, 200, 250, 250, 200);
+            g.DrawLine(Whitepen, 225, 190, 225, 260);
+            g.DrawLine(Whitepen, 190, 225, 260, 225);
+
+            g.DrawLine(Whitepen, 310, 30, 370, 80);
+         
+
             Font drawFont = new Font("flame", 20, FontStyle.Bold);
             g.DrawString("IT'S WINTER \n TIME", drawFont,deepskybluebrush , 100, 100);
 
@@ -97,10 +105,10 @@ namespace Greating_card
             g.DrawEllipse(Whitepen, 300, 95, 5, 5);
             g.DrawEllipse(Whitepen, 60, 40, 5, 5);
 
-
+           
         }
 
     }
-
-
+    
+    
 }
