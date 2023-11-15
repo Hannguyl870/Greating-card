@@ -5,13 +5,16 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
+using System.Media;
 using System.Windows.Forms;
+
 
 namespace Greating_card
 {
     public partial class Form1 : Form
     {
+        SoundPlayer sp;
         Pen darkturquoisepen = new Pen(Color.DarkTurquoise, 5);
         Pen greenpen = new Pen(Color.Green, 5);
         Pen blackpen = new Pen(Color.Black);
@@ -30,6 +33,8 @@ namespace Greating_card
         SolidBrush deepskybluebrush = new SolidBrush(Color.DeepSkyBlue);
         SolidBrush orangebrush = new SolidBrush(Color.Orange); 
         int i = 0;
+        
+
         public Form1()
         {
             InitializeComponent();
@@ -51,8 +56,11 @@ namespace Greating_card
             g.DrawLine(Whitepen, 225, 190, 225, 260);
             g.DrawLine(Whitepen, 190, 225, 260, 225);
 
-            g.DrawLine(Whitepen, 310, 30, 370, 80);
-         
+            g.DrawLine(Whitepen, 310, 30, 360, 80);
+            g.DrawLine(Whitepen, 310, 80,360 , 30);
+            g.DrawLine(Whitepen, 335, 20, 335, 90);
+            g.DrawLine(Whitepen, 300, 55, 370, 55);
+
 
             Font drawFont = new Font("flame", 20, FontStyle.Bold);
             g.DrawString("IT'S WINTER \n TIME", drawFont,deepskybluebrush , 100, 100);
@@ -62,6 +70,8 @@ namespace Greating_card
 
         private void Form1_Click(object sender, EventArgs e)
         {
+            sp = new SoundPlayer(Properties.Resources._369473__ylearkisto__enkelikello_kilina_angel_chimes_jingling);
+            sp.Play();
             Graphics g = this.CreateGraphics();
             g.Clear(Color.LightBlue);
 
@@ -87,28 +97,46 @@ namespace Greating_card
             g.FillPie(redbrush,-25, 6, 90, 90, 30, 60);
             g.FillEllipse(blackbrush, 10,45, 20, 20);
 
-            int i = 0; 
+            g.FillEllipse(blackbrush, 85, 210, 10, 10);
+            g.FillEllipse(blackbrush, 75, 170, 10, 10);
+            g.FillEllipse(blackbrush, 70, 140, 10, 10);
 
-            g.DrawEllipse(Whitepen, 55, 310, 5, 5);
-            g.DrawEllipse(Whitepen, 130, 95, 5, 5);
-            g.DrawEllipse(Whitepen, 100, 120, 5, 5);
-            g.DrawEllipse(Whitepen, 200, 300, 5, 5);
-            g.DrawEllipse(Whitepen, 250, 120, 5, 5);
-            g.DrawEllipse(Whitepen, 150, 95, 5, 5);
-            g.DrawEllipse(Whitepen, 300, 200, 5, 5);
-            g.DrawEllipse(Whitepen, 200, 80, 5, 5);
-            g.DrawEllipse(Whitepen, 100, 300, 5, 5);
-            g.DrawEllipse(Whitepen, 100, 150, 5, 5);
-            g.DrawEllipse(Whitepen, 160, 260, 5, 5);
-            g.DrawEllipse(Whitepen, 200, 200, 5, 5);
-            g.DrawEllipse(Whitepen, 100, 60, 5, 5);
-            g.DrawEllipse(Whitepen, 300, 95, 5, 5);
-            g.DrawEllipse(Whitepen, 60, 40, 5, 5);
 
-           
+
+            int colourValue = 0;
+
+            for (int i= 0; i<=10;i++ )
+            {
+                colourValue += 20;
+
+                Whitepen = new Pen(Color.FromArgb(colourValue, 255, 255, 255),5);
+
+                g.DrawEllipse(Whitepen, 300, 30, 5, 5);
+                g.DrawEllipse(Whitepen, 100, 60, 5, 5);
+                g.DrawEllipse(Whitepen, 60, 40, 5, 5);
+                g.DrawEllipse(Whitepen, 350, 40, 5, 5);
+                g.DrawEllipse(Whitepen, 150, 95, 5, 5);
+                g.DrawEllipse(Whitepen, 130, 95, 5, 5);
+                g.DrawEllipse(Whitepen, 200, 80, 5, 5);
+                g.DrawEllipse(Whitepen, 250, 120, 5, 5);
+                g.DrawEllipse(Whitepen, 100, 150, 5, 5);
+                g.DrawEllipse(Whitepen, 300, 200, 5, 5);
+                g.DrawEllipse(Whitepen, 200, 200, 5, 5);
+                g.DrawEllipse(Whitepen, 100, 120, 5, 5);
+                g.DrawEllipse(Whitepen, 300, 95, 5, 5);
+                g.DrawEllipse(Whitepen, 100, 300, 5, 5);
+                g.DrawEllipse(Whitepen, 55, 310, 5, 5);
+                g.DrawEllipse(Whitepen, 160, 260, 5, 5);
+                g.DrawEllipse(Whitepen, 300, 300, 5, 5);
+                g.DrawEllipse(Whitepen, 200, 300, 5, 5);
+
+                Thread.Sleep(200);
+
+            }
+
         }
 
     }
     
-    
+   
 }
