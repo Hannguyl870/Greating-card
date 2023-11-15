@@ -1,4 +1,6 @@
-﻿using System;
+﻿//hannah guylee
+// greeting card
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -46,16 +48,19 @@ namespace Greating_card
             Graphics g = this.CreateGraphics();
             g.Clear(Color.LightBlue);
 
+            //snowflake 1
             g.DrawLine(Whitepen, 40, 40, 100, 100);
             g.DrawLine(Whitepen, 40, 100, 100, 40);
             g.DrawLine(Whitepen, 70, 30, 70, 110);
             g.DrawLine(Whitepen, 30, 70, 110, 70);
 
+            //snowflake 2
             g.DrawLine(Whitepen, 200, 200, 250, 250);
             g.DrawLine(Whitepen, 200, 250, 250, 200);
             g.DrawLine(Whitepen, 225, 190, 225, 260);
             g.DrawLine(Whitepen, 190, 225, 260, 225);
 
+            //snowflake 3
             g.DrawLine(Whitepen, 310, 30, 360, 80);
             g.DrawLine(Whitepen, 310, 80,360 , 30);
             g.DrawLine(Whitepen, 335, 20, 335, 90);
@@ -78,6 +83,7 @@ namespace Greating_card
             Font drawFont = new Font("flame", 20, FontStyle.Bold);
             g.DrawString("LET'S BUILD A \n SNOWMAN", drawFont, deepskybluebrush, 100, 100);
 
+            ///snowman 
             g.DrawEllipse(Whitepen, 25, 200, 100, 100);
             g.DrawEllipse(Whitepen, 25, 127, 75, 75);
             g.DrawEllipse(Whitepen, 25, 77, 50, 50);
