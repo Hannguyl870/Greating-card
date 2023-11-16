@@ -68,7 +68,7 @@ namespace Greating_card
             g.DrawLine(Whitepen, 300, 55, 370, 55);
 
 
-            Font drawFont = new Font("flame", 20, FontStyle.Bold);
+            Font drawFont = new Font("minstral", 20, FontStyle.Bold);
             g.DrawString("IT'S WINTER \n TIME", drawFont,deepskybluebrush , 100, 100);
 
 
